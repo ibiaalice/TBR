@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tbr_mobile/tutorial/widgets/tutorial_card.dart';
+import 'package:tbr_mobile/app/tutorial/widgets/tutorial_card.dart';
 
 class TutorialBox extends StatelessWidget {
   @override
@@ -13,7 +13,7 @@ class TutorialBox extends StatelessWidget {
             color: Color(0xff78e08f),
             title: 'O que é TBR?',
             information:
-                'TBR é uma sigla inglesa (To Be Read) Uma lista de livros que você tem para ler.',
+                'TBR é uma sigla em inglês (To Be Read) Uma lista de livros que você tem para ler.',
           ),
           SizedBox(width: 10),
           TutorialCard(

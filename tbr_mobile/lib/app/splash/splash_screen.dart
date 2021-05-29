@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tbr_mobile/tutorial/tutorial.dart';
+import 'package:tbr_mobile/app/tutorial/tutorial.dart';
 
 class SplashScreen extends StatefulWidget {
   @override

@@ -33,6 +33,9 @@ dev_dependencies:
     sdk: flutter
   flutter_bloc: any
   bloc: any
+  sqflite: any
+  flutter_slidable: any
+  flushbar: ^1.10.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -48,6 +51,7 @@ flutter:
   assets:
     - assets/splash.gif
     - assets/destaque.png
+    - assets/icon_header.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

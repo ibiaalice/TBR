@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tbr_mobile/home/home_page.dart';
-import 'package:tbr_mobile/tutorial/widgets/continue_button.dart';
-import 'package:tbr_mobile/tutorial/widgets/tutorial_box.dart';
+import 'package:tbr_mobile/app/home/home_page.dart';
+import 'package:tbr_mobile/app/tutorial/widgets/continue_button.dart';
+import 'package:tbr_mobile/app/tutorial/widgets/tutorial_box.dart';
 
 class TutorialPage extends StatelessWidget {
   @override
