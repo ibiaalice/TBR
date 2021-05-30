@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:tbr_mobile/data/models/book.dart';
+import 'dart:math';
 
 class Header extends StatefulWidget {
-  final int qtdBooks;
+  final List<Book> books;
 
-  const Header({Key key, @required this.qtdBooks}) : super(key: key);
+  const Header({Key key, @required this.books}) : super(key: key);
   @override
   _HeaderState createState() => _HeaderState();
 }
@@ -43,16 +45,93 @@ class _HeaderState extends State<Header> {
                     ),
                     SizedBox(height: 10),
                     Text(
-                      widget.qtdBooks.toString(),
+                      widget.books.length.toString(),
                       style: TextStyle(color: Colors.white, fontSize: 18),
                     )
                   ],
                 ),
               ),
             ),
-          )
+          ),
+          FlatButton(
+            onPressed: () => _emitAlert(),
+            child: Card(
+              shadowColor: Colors.black,
+              color: Color(0xffeb2f06),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(180)),
+              child: Padding(
+                padding: EdgeInsets.all(10),
+                child: Text(
+                  'Sortear livro',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
+  }
+
+  void _emitAlert() {
+    showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          if (widget.books.isEmpty) {
+            return AlertDialog(
+              title: Text('Não há livros na lista'),
+              actions: [
+                FlatButton(
+                  onPressed: () => Navigator.of(context).pop(),
+                  child: Text('Sair'),
+                ),
+              ],
+            );
+          } else {
+            Book book = _raffleBook();
+
+            return AlertDialog(
+              title: Row(
+                children: [
+                  Image.asset('assets/livro.png', scale: 10),
+                  SizedBox(width: 10),
+                  Text('O livro sorteado foi...')
+                ],
+              ),
+              content: Container(
+                height: 100,
+                width: 100,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      book.title,
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    Text(book.gender),
+                  ],
+                ),
+              ),
+              actions: [
+                FlatButton(
+                  onPressed: () => Navigator.of(context).pop(),
+                  child: Text('Sair'),
+                ),
+              ],
+            );
+          }
+        });
+  }
+
+  Book _raffleBook() {
+    Random random = new Random();
+
+    Book result = widget.books[random.nextInt(widget.books.length)];
+
+    return result;
   }
 }

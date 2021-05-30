@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Column(
         children: [
-          Header(qtdBooks: _bookList.length),
+          Header(books: _bookList),
           Expanded(
             child: Container(
               child: _buildBookList(),
