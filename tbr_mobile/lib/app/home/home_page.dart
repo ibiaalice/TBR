@@ -81,16 +81,19 @@ class _HomePageState extends State<HomePage> {
 
   Widget _buildTaskItem(BuildContext context, int index) {
     final book = _bookList[index];
-    return ListTile(
-      title: Text(book.title),
-      subtitle: Text(book.gender),
-      // onChanged: (bool isChecked) {
-      //   setState(() {
-      //     book.isDone = isChecked;
-      //   });
-      /// vou precisar disso para sortear
-      //   _helper.update(task);
-      // },
+    return Card(
+      child: ListTile(
+        title: Text(book.title),
+        subtitle: Text(book.gender),
+        leading: Icon(
+          Icons.arrow_back_ios_outlined,
+          color: Color(0xfff6b93b),
+        ),
+        trailing: Icon(
+          Icons.menu_book_sharp,
+          color: Color(0xff079992),
+        ),
+      ),
     );
   }
 
