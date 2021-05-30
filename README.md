@@ -5,9 +5,7 @@
 
 <br />
 
-### espero que curtam! 
 
-<br />
 
 ## Emular projeto:
 
