@@ -1,7 +1,7 @@
 # TBR (To Be Read)
 
 
-## O tbr é um aplicativo de listagem e sorteio da sua próxima leitura. Nele, você é capaz de adicionar livros, remover e sortear o livro que será a sua próxima leitura.
+ O tbr é um aplicativo de listagem e sorteio da sua próxima leitura. Nele, você é capaz de adicionar livros, remover e sortear o livro que será a sua próxima leitura.
 
 <br />
 
